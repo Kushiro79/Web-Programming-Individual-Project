@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Main Page</title>
+    <link rel="stylesheet" href="Main.css" />
+    <script src="tool_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#includedContent").load("HeadNav.html");
+      });
+      $(function () {
+        $("#footerContent").load("Footer.html");
+      });
+    </script>
+    <style>
+      #bar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="includedContent"></div>
+    <div id="PersonalInfo">
+      <h1 id="fullName">AHMAD FARIS BIN MOHD HAFIZ</h1>
+      <div class="MyInfo">
+        <div class="AboutMe">
+          <h1>ABOUT ME</h1>
+          <p class="subhead">
+            I've been interested in technology since early adolescence. This led me to enroll at <a href="https://www.utm.my">University of Technology Malaysia</a>
+            for Diploma in Computer Science. I aspire to be a trend setter in the field in the future,
+            I work hard to polish my skills and learn new things all the time.
+          </p>
+          <a style="text-decoration:underline ;" href="CV Resume.pdf" download>Download CV</a>
+        </div>
+        <div class="MyPhoto">
+          <img src="Image/ProfilePic.jpg" alt="" />
+        </div>
+      </div>
+
+    </div>
+    <div id="footerContent"></div>
+
+  </body>
+</html>

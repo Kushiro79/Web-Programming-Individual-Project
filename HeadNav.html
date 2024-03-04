@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="Main.css" />
+    <script src="tool_script.js"></script>
+    <script>
+      function scrollToPersonalInfo() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var fileOpen = urlParams.has('fileOpen');
+
+        if (!fileOpen) {
+          // If the file is not open, redirect to the same file with the parameter indicating it's open
+          setTimeout(function() {
+            window.location.href = 'index.html?fileOpen=true'; // Redirect to index.html with the parameter
+          }, 1000); // Delay for 1 second before redirecting
+        } else {
+          // If the file is already open, smoothly scroll to the personal info section
+          document.getElementById('PersonalInfo').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+        }
+      
+      }
+
+      $(document).on('click', '.scroll-to-personal-info', function() {
+        event.preventDefault();
+        scrollToPersonalInfo();
+      });
+      $(function () {
+        $("#footerContent").load("Footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="Header">
+      <div class="logo">
+        <a id="logo" href="index.html"><img src="Image/Logo.png" alt="" /></a>
+      </div>
+      <div class="Nav" >
+        <a href="tool.html">Tools</a>
+        <a href="Index.html" class="scroll-to-personal-info">Personal Info</a>
+        <div class="Nav" id="bar">
+          <a
+            href="#"
+            onclick="return shows('BMIChecker','unitConverter','zakatCalculator','calculatorTool');"
+            >Calculator</a
+          >
+          <a
+            href="#"
+            onclick="return shows('calculatorTool','unitConverter','zakatCalculator','BMIChecker');"
+            >BMI Checker
+          </a>
+          <a
+            href="#"
+            onclick="return shows('BMIChecker','calculatorTool','zakatCalculator','unitConverter');"
+            >Unit Converter</a
+          >
+          <a
+            href="#"
+            onclick="return shows('BMIChecker','unitConverter','calculatorTool','zakatCalculator');"
+            >Zakat/Income tax Calculator</a
+          >
+        </div>
+      </div>
+    </div>
+
+
+    </script>
+  </body>
+</html>

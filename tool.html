@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tools </title> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="Main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="tool_script.js"></script>
+    <script>
+      $(function () {
+        $("#includedContent").load("HeadNav.html");
+      });
+    </script>
+
+
+  </head>
+  <body>
+    <div id="includedContent"></div>
+
+   
+    <div class="calculatorTool" style="display: block;">
+      <div class="page">
+        <form>
+        <h1>Calculate</h1><br>
+          <input class="w3-input w3-border w3-animate-input w3-light-grey" type="number" id="no1" placeholder="enter no1" class="myInput" />
+          <br />
+          <input class="w3-input w3-border w3-animate-input w3-light-grey" type="number" id="no2" placeholder="enter no2" class="myInput" />
+          <br />
+
+          <input
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="+"
+            onclick="calculate(this)" />
+          <input
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="-"
+            onclick="calculate(this)" />
+          <input
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="*"
+            onclick="calculate(this)" />
+          <input
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="/"
+            onclick="calculate(this)" />
+
+          <br /><br><input
+            style="width: 150px;"
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="Reset"
+            onclick="reset(no1,no2)" />
+            <div id="resultDiv">
+              <h3>Result is :</h3>
+            </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="BMIChecker" style="display: none;">
+      <div class="page">
+        <form >
+        <h1>Weight Checker</h1>
+        <label for="Height">Height: </label>
+        <input class="w3-input w3-border w3-animate-input w3-light-grey"  type="number" placeholder="M" id="Height" step="0.01" />
+        <br />
+        <label for="Weight">Weight: </label>
+        <input class="w3-input w3-border w3-animate-input w3-light-grey" type="number" placeholder="KG" id="Weight" step="0.1" />
+        <br /><br />
+        <input class="w3-button w3-round w3-border" type="button" value="Calculate BMI" onclick="calcBMI()" />
+        <div id="Output">
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="unitConverter" style="display: none;">
+      <div class="page">
+        <form>
+        <div class="Conversion">
+          <h1>Centimeters to Meters</h1>
+          Centimeters(cm):
+          <input class="w3-input w3-border w3-animate-input w3-light-grey"type="number" placeholder="CM" step="0.01" id="cmToM" />
+          <br><input 
+            class="w3-button w3-round w3-border"
+            type="button"
+            value="Convert"
+            id="cm2m"
+            onclick="Convert(this)" />
+          <button class="w3-button w3-round w3-border" onclick="document.getElementById('cmToM').value =''">
+            Clear
+          </button>
+          <br />  
+          <h4>Meters to Centimeters</h4>
+          Meters(m):
+          <input class="w3-input w3-border w3-animate-input w3-light-grey"type="number" placeholder="M" step="0.01" id="MtoCM" />
+          <br><input
+            class="w3-button w3-round w3-border"          
+            type="button"
+            value="Convert"
+            id="m2cm"
+            onclick="Convert(this)" />
+          <button class="w3-button w3-round w3-border" onclick="document.getElementById('MtoCM').value = ''">
+            Clear
+          </button>
+          <br />
+        
+          <h4>Metre to km</h4>
+          Meters(m):
+          <input class="w3-input w3-border w3-animate-input w3-light-grey"type="number" placeholder="M" step="0.01" id="MtoKM" />
+          <br><input
+            class="w3-button w3-round w3-border"          
+            type="button"
+            value="Convert"
+            id="m2km"
+            onclick="Convert(this)" />
+          <button class="w3-button w3-round w3-border" onclick="document.getElementById('MtoKM').value = ''">
+            Clear
+          </button>
+          <br />
+  
+          <h4>Kilometers to metre</h4>
+          Kilometers(KM):
+          <input class="w3-input w3-border w3-animate-input w3-light-grey"type="number" placeholder="KM" step="0.01" id="KMtoM" />
+          <br><input
+            class="w3-button w3-round w3-border"          
+            type="button"
+            value="Convert"
+            id="km2m"
+            onclick="Convert(this)" />
+          <button class="w3-button w3-round w3-border" onclick="document.getElementById('KMtoM').value = ''">
+            Clear
+          </button>
+          <br />
+  
+          <h4>Celcius to Fahrenheit</h4>
+          Celcius(C):
+          <input class="w3-input w3-border w3-animate-input w3-light-grey"type="number" placeholder="C" step="0.01" id="CtoF" />
+          <br><input
+            class="w3-button w3-round w3-border"          
+            type="button"
+            value="Convert"
+            id="ctof"
+            onclick="Convert(this)" />
+          <button class="w3-button w3-round w3-border" onclick="document.getElementById('CtoF').value = ''">
+            Clear
+          </button>
+        </div>
+  
+        <div class="roboto-black" id="result"></div>
+      </div>
+
+      </form>
+    </div>
+
+    <div class="zakatCalculator" style="display: none;">
+      <div class="page">
+        <form>
+        <h1>Zakat Calculator</h1>
+        <label for="Yearly Income">Yearly Income:</label>
+        <input class="w3-input w3-border w3-animate-input w3-light-grey" type="number" placeholder="Yearly Income" id="YearlyIncome" />
+        <input
+          class="w3-button w3-round w3-border"
+          type="submit"
+          value="Calculate"
+          id="Calculate"
+          onclick="Calculate()" />
+        <p id="ZakatAmount" style="text-align: center"></p>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div id="footerContent"></div>
+
+  </body>
+</html>
