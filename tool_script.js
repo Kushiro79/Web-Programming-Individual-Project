@@ -113,8 +113,3 @@ function shows(hide1, hide2, hide3, show) {
   document.querySelector('.' + show).style.display = 'block';
   return false;
 }
-function scroll(target)
-{
-  document.getElementById(target).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
-
-}

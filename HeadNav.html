@@ -24,10 +24,21 @@
         }
       
       }
+      function scrollToResume(){
+        document.getElementById('resume').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+      }
 
       $(document).on('click', '.scroll-to-personal-info', function() {
         event.preventDefault();
         scrollToPersonalInfo();
+      });
+      $(document).on('click', '.scroll-to-resume', function() {
+        event.preventDefault();
+        scrollToResume();
       });
       $(function () {
         $("#footerContent").load("Footer.html");
@@ -42,6 +53,7 @@
       <div class="Nav" >
         <a href="tool.html">Tools</a>
         <a href="Index.html" class="scroll-to-personal-info">Personal Info</a>
+        <a href="" class="scroll-to-resume"></a>
         <div class="Nav" id="bar">
           <a
             href="#"

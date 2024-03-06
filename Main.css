@@ -34,9 +34,7 @@
 .Nav a:link {
   color: grey;
 }
-div {
-  min-height: 100vh;
-}
+
 
 .index  {
   overflow-y: hidden ;
