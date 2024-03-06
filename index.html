@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="Main.css" />
     <script src="tool_script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <script>
       $(function () {
         $("#includedContent").load("HeadNav.html");
@@ -19,7 +20,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="index">
     <div id="includedContent"></div>
     <div id="PersonalInfo">
       <h1 id="fullName">AHMAD FARIS BIN MOHD HAFIZ</h1>
@@ -35,13 +36,25 @@
         </div>
         <div class="MyPhoto">
           <img src="Image/ProfilePic.jpg" alt="" />
+          <table class="w3-table  w3-bordered">
+            <tr>
+              <td>Name :</td>
+              <td>AHMAD FARIS BIN MOHD HAFIZ</td>  
+            </tr>
+            <tr>
+              <td>Matric :</td>
+              <td>A22DW0069</td>  
+            </tr>
+
+
+          </table>
         </div>
       </div>
 
     </div>
-
-    <img style="width: 100%;height: auto;" src="Image/CV Resume_page-0001.jpg" alt="">
-
+    <div style="text-align: center;">
+      <img style="width: 80%;margin: 0 auto; " src="Image/CV Resume_page-0001.jpg" alt="">
+    </div>
     <div id="footerContent"></div>
 
   </body>

@@ -35,12 +35,16 @@
   color: grey;
 }
 div {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
-#PersonalInfo {
+.index  {
+  overflow-y: hidden ;
+  overflow-x: hidden ;
+  max-height: min-content;
   background-image: url("Image/3672686.jpg");
-  max-height: 100vh;
+  background-size: cover;
+
 }
 .MyInfo {
   display: flex;
@@ -78,11 +82,12 @@ div {
   text-decoration: underline;
 }
 .MyPhoto img {
-  height: 60%;
+  max-height: 500px;
   width: auto;
-  border-radius: 50px;
+  border-radius: 25px;
   margin: auto;
   display: block;
+  background-color: white;
 }
 
 .page {
