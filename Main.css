@@ -46,6 +46,8 @@
 }
 .MyInfo {
   display: flex;
+  width: 80%;
+  margin: auto;
 }
 #fullName {
   padding: 50px 10%;
